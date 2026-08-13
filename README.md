@@ -44,3 +44,9 @@ A highly challenging web-based (.io) worm battle game built with HTML5 Canvas an
 1. Clone or download this repository to your computer.
 2. Open the `index.html` file using any modern web browser (Google Chrome, Microsoft Edge, or Mozilla Firefox).
 3. Play the game instantly offline!
+
+Developed with 💻 by [TANDev](https://github.com/TANDev-cmyk)
+
+## 🕹️ Mainkan Game
+Klik tautan berikut untuk langsung mencoba game ini di browser Anda:
+[Mainkan Neon Worm Game Disini](https://tandev-cmyk.github.io/Laga-Cacing-TANDev/)
