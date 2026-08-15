@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- POKI SDK: Ditambahkan konfigurasi viewport wajib agar game responsif dan mencegah zoom manual di perangkat mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <!-- UBAH: Nama pada tab peramban -->
+    <title>Laga Cacing</title>
+
+    <!-- MASUKKAN KODE POKI SDK DI SINI -->
+    <script src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading -->
+    <div id="loadingScreen">
+        <!-- UBAH: Judul saat loading -->
+        <h1>LAGA CACING</h1>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Menu -->
+    <div id="menu">
+
+        <div class="panel">
+
+            <!-- UBAH: Judul utama menu -->
+            <h1>🐛 LAGA CACING</h1>
+            <p class="author-text">by TANDev</p>
+            <input
+                type="text"
+                id="playerName"
+                maxlength="15"
+                placeholder="Masukkan Nama">
+
+            <button id="playBtn">
+                ▶ PLAY
+            </button>
+
+            <button id="skinBtn">
+                🎨 SKINS
+            </button>
+
+            <button id="settingBtn">
+                ⚙ SETTINGS
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Pop-up SKINS -->
+    <div id="skinModal" class="modal">
+        <div class="modal-content">
+            <!-- UBAH: Judul pop-up pilihan warna -->
+            <h2>🎨 PILIH WARNA CACING</h2>
+            <div class="skin-options">
+                <button class="skin-opt" data-color="#00ffff" style="background:#00ffff; color:#000;">Cyan</button>
+                <button class="skin-opt" data-color="#ff00ff" style="background:#ff00ff;">Magenta</button>
+                <button class="skin-opt" data-color="#00ff00" style="background:#00ff00; color:#000;">Lime</button>
+                <button class="skin-opt" data-color="#ffff00" style="background:#ffff00; color:#000;">Yellow</button>
+                <button class="skin-opt" data-color="#ff3300" style="background:#ff3300;">Red</button>
+                <button class="skin-opt" data-color="#ff9900" style="background:#ff9900; color:#000;">Orange</button>
+                <button class="skin-opt" data-color="#9900ff" style="background:#9900ff;">Purple</button>
+                <button class="skin-opt" data-color="#ffffff" style="background:#ffffff; color:#000;">White</button>
+            </div>
+            <button id="closeSkinBtn" class="close-btn">Kembali</button>
+        </div>
+    </div>
+
+    <!-- Pop-up SETTINGS -->
+    <div id="settingModal" class="modal">
+        <div class="modal-content">
+            <h2>⚙️ PENGATURAN</h2>
+            <div class="setting-item">
+                <label>🔊 Efek Suara (SFX):</label>
+                <input type="range" min="0" max="100" value="80">
+            </div>
+            <div class="setting-item">
+                <!-- UBAH: Label opsi grafik -->
+                <label>👾 Efek Cahaya Arena:</label>
+                <select id="graphicQuality">
+                    <!-- UBAH: Keterangan pilihan grafik -->
+                    <option value="high">Tinggi (Menyala ON)</option>
+                    <option value="low">Rendah (Menyala OFF - Lancar)</option>
+                </select>
+            </div>
+            <button id="closeSettingBtn" class="close-btn">Simpan</button>
+        </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+
+        <div class="left">
+
+            <div>⭐ Score :
+                <span id="score">0</span>
+            </div>
+
+            <div>🏆 Level :
+                <span id="level">1</span>
+            </div>
+
+            <div>⚡ Boost :
+                <span id="boost">100%</span>
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div id="leaderboard">
+
+                <h3>Leaderboard</h3>
+
+                <ol id="leaders">
+
+                </ol>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Game Over -->
+    <div id="gameOver">
+
+        <h1>GAME OVER</h1>
+
+        <h2 id="finalScore">
+            Score : 0
+        </h2>
+
+        <!-- POKI SDK: Ditambahkan tombol Revive/Hidup Kembali menggunakan fitur Rewarded Break (Iklan Video Berhadiah) sebelum tombol restart -->
+        <button id="reviveBtn" style="display: none;">
+            📺 Revive (Nonton Iklan)
+        </button>
+
+        <button id="restartBtn">
+            Main Lagi
+        </button>
+
+        </div>
+    <!-- Tag Audio untuk Musik Latar -->
+    <audio id="bgMusic" loop>
+        <source src="bg-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
