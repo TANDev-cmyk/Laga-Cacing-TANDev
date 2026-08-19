@@ -49,4 +49,4 @@ Developed with 💻 by [TANDev](https://github.com/TANDev-cmyk)
 
 ## 🕹️ Mainkan Game
 Klik tautan berikut untuk langsung mencoba game ini di browser Anda:
-[Mainkan Neon Worm Game Disini](https://tandev-cmyk.github.io/Laga-Cacing-TANDev/)
+[Mainkan Laga Cacing Disini](https://tandev-cmyk.github.io/Laga-Cacing-TANDev/)
